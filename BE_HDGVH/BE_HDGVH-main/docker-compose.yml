@@ -1,0 +1,78 @@
+# Chạy: docker compose up --build
+# API: http://localhost:8080/swagger
+# SQL Server (từ máy host): localhost,1434 — user sa / mật khẩu trong .env
+#
+# Production: sao chép .env.example → .env, điền PAYOS_*, CLOUDINARY_* / Cloudinary__*, GOONG_* (và Jwt an toàn — xem .env.example).
+# Biến PAYOS_* được map sang PayOs__* (cấu hình IOptions) trong container.
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: be_api_sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD:-YourStrong@Passw0rd}"
+    ports:
+      - "1434:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$${MSSQL_SA_PASSWORD}\" -C -Q \"SELECT 1\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 40s
+    # networks:
+    #   - shared-net
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: be_api
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
+      ASPNETCORE_URLS: http://+:8080
+      DOTNET_RUNNING_IN_CONTAINER: "true"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=Kho;User Id=sa;Password=${MSSQL_SA_PASSWORD:-YourStrong@Passw0rd};TrustServerCertificate=True;"
+      # payOS — giá trị lấy từ .env (xem .env.example)
+      PayOs__ClientId: ${PAYOS_CLIENT_ID:-}
+      PayOs__ApiKey: ${PAYOS_API_KEY:-}
+      PayOs__ChecksumKey: ${PAYOS_CHECKSUM_KEY:-}
+      PayOs__PartnerCode: ${PAYOS_PARTNER_CODE:-}
+      PayOs__ReturnUrl: ${PAYOS_RETURN_URL:-}
+      PayOs__CancelUrl: ${PAYOS_CANCEL_URL:-}
+      PayOs__LinkLifetimeMinutes: ${PAYOS_LINK_LIFETIME_MINUTES:-1440}
+      # SDK payOS cũng đọc các biến này nếu cần (đồng bộ với PayOs__*)
+      PAYOS_CLIENT_ID: ${PAYOS_CLIENT_ID:-}
+      PAYOS_API_KEY: ${PAYOS_API_KEY:-}
+      PAYOS_CHECKSUM_KEY: ${PAYOS_CHECKSUM_KEY:-}
+      PAYOS_PARTNER_CODE: ${PAYOS_PARTNER_CODE:-}
+      Cloudinary__CloudName: ${CLOUDINARY_CLOUD_NAME:-}
+      Cloudinary__ApiKey: ${CLOUDINARY_API_KEY:-}
+      Cloudinary__ApiSecret: ${CLOUDINARY_API_SECRET:-}
+      Cloudinary__BaseFolder: ${CLOUDINARY_BASE_FOLDER:-admin}
+      Cloudinary__MaxFileBytes: ${CLOUDINARY_MAX_FILE_BYTES:-15728640}
+      # Gemini chatbot — bind sang Gemini__* (xem Configuration/GeminiOptions.cs)
+      Gemini__ApiKey: ${GEMINI_API_KEY:-}
+      Gemini__Model: ${GEMINI_MODEL:-gemini-2.5-flash}
+      Gemini__MaxIterations: ${GEMINI_MAX_ITERATIONS:-5}
+      Gemini__StrictTopicBoundaryStorefront: ${GEMINI_STRICT_TOPIC_BOUNDARY_STOREFRONT:-true}
+      # Goong autocomplete địa chỉ — bind sang Goong__* (xem Configuration/GoongOptions.cs)
+      Goong__ApiKey: ${GOONG_API_KEY:-}
+      Goong__BaseUrl: ${GOONG_BASE_URL:-https://rsapi.goong.io}
+      Goong__DefaultLimit: ${GOONG_DEFAULT_LIMIT:-5}
+      Goong__DefaultLocation: ${GOONG_DEFAULT_LOCATION:-21.0278,105.8342}
+      Goong__MoreCompound: ${GOONG_MORE_COMPOUND:-true}
+    # networks:
+    #   - shared-net
+# networks:
+#   shared-net:
+#     external: true
+volumes:
+  mssql_data:

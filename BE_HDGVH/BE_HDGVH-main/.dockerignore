@@ -1,0 +1,13 @@
+**/.git
+**/.vs
+**/bin
+**/obj
+**/_hashgen
+**/*.user
+**/*.suo
+**/appsettings.Development.json
+**/launchSettings.json
+**/docker-compose*.yml
+**/Dockerfile*
+**/.env
+**/.env.*

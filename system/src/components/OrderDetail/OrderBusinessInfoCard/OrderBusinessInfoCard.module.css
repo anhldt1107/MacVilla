@@ -1,0 +1,77 @@
+.card {
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.itemLabel {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.itemValue {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.itemValueMono {
+  font-family: ui-monospace, monospace;
+  font-weight: 500;
+}
+
+.contactRow {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.contactBox {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.contactBox .icon {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.contactBox span {
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--color-text);
+}

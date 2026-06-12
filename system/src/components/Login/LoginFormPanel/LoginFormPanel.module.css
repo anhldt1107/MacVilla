@@ -1,0 +1,21 @@
+.panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  background-color: var(--color-bg-light);
+}
+
+@media (min-width: 1024px) {
+  .panel {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+.inner {
+  width: 100%;
+  max-width: 24rem;
+}

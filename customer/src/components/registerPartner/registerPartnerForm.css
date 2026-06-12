@@ -1,0 +1,125 @@
+.rpb-form-column {
+  @apply w-full lg:w-1/2 flex flex-col justify-center items-center p-6 md:p-12 lg:p-20 overflow-y-auto;
+}
+
+  .rpb-form-inner {
+    @apply w-full max-w-xl;
+  }
+
+  .rpb-form-title-block {
+    @apply mb-8;
+  }
+
+  .rpb-form-h2 {
+    @apply text-3xl font-black text-slate-900 dark:text-white mb-2;
+  }
+
+  .rpb-form-sub {
+    @apply text-slate-500 dark:text-slate-400;
+  }
+
+  .rpb-form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
+  .rpb-form-field {
+    @apply space-y-2;
+  }
+
+  .rpb-form-label {
+    @apply text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1;
+  }
+
+  .rpb-form-required {
+    @apply text-red-500;
+  }
+
+  .rpb-form-input-wrap {
+    @apply relative;
+  }
+
+  .rpb-form-input {
+    @apply w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-slate-900 dark:text-slate-100;
+  }
+
+  .rpb-form-input-error {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-200;
+  }
+
+  .rpb-form-input-password {
+    @apply w-full pl-10 pr-12 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-slate-900 dark:text-slate-100;
+  }
+
+  .rpb-form-icon {
+    @apply absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg;
+  }
+
+  .rpb-form-textarea {
+    @apply w-full pl-3 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none text-slate-900 dark:text-slate-100;
+  }
+
+  .rpb-form-input.is-invalid,
+  .rpb-form-input-password.is-invalid,
+  .rpb-form-textarea.is-invalid {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-200;
+  }
+
+  .rpb-form-hint {
+    @apply text-xs text-slate-500 mt-1;
+  }
+
+  .rpb-form-field-error {
+    @apply text-xs text-red-500 mt-1;
+  }
+
+  .rpb-form-alert {
+    @apply mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/40 dark:text-red-200;
+  }
+
+  .rpb-form-terms {
+    @apply md:col-span-2 flex items-start gap-3 mt-2;
+  }
+
+  .rpb-form-terms-check {
+    @apply mt-1 size-4 rounded border-slate-300 text-primary focus:ring-primary;
+  }
+
+  .rpb-form-terms-label {
+    @apply text-sm text-slate-600 dark:text-slate-400 leading-tight;
+  }
+
+  .rpb-form-actions {
+    @apply md:col-span-2 pt-4;
+  }
+
+  .rpb-form-submit {
+    @apply w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .rpb-form-footer {
+    @apply md:col-span-2 text-center mt-6;
+  }
+
+  .rpb-form-footer-text {
+    @apply text-slate-600 dark:text-slate-400;
+  }
+
+  .rpb-form-footer-link {
+    @apply text-primary font-bold hover:underline;
+  }
+
+  .rpb-form-toggle-password {
+    @apply absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary;
+  }
+
+  .rpb-mobile-logo {
+    @apply lg:hidden flex items-center gap-3 mb-8;
+  }
+
+  .rpb-mobile-logo-icon {
+    @apply size-8 bg-primary rounded flex items-center justify-center text-white;
+  }
+
+.rpb-mobile-logo-title {
+  @apply text-slate-900 dark:text-white text-xl font-bold tracking-tight;
+}

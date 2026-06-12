@@ -1,0 +1,170 @@
+.card {
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.stepperWrap {
+  position: relative;
+  flex: 1;
+}
+
+.track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-bg-light);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.trackFill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.steps {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dot span {
+  font-size: 0.875rem;
+}
+
+.dotDone {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.dotCurrent {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 0 0 4px var(--color-surface);
+}
+
+.dark .dotCurrent {
+  box-shadow: 0 0 0 4px var(--color-surface-dark);
+}
+
+.dotPending {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-muted);
+}
+
+.stepLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.stepLabelActive {
+  color: var(--color-primary);
+}
+
+.stepLabelMuted {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.divider {
+  width: 1px;
+  height: 3rem;
+  background-color: var(--color-border);
+  flex-shrink: 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .divider {
+    display: block;
+    margin: 0 2rem;
+  }
+}
+
+.projectBox {
+  padding: 1rem;
+  background-color: var(--color-primary-muted);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-xl);
+  min-width: 12rem;
+}
+
+.projectLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.projectRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.projectRow .icon {
+  color: var(--color-primary);
+}
+
+.projectLink {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.projectLink:hover {
+  text-decoration: underline;
+}

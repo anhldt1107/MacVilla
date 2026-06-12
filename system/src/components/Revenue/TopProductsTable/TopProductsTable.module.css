@@ -1,0 +1,149 @@
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.viewAll {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.th {
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-light);
+}
+
+.td {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.tr:hover .td {
+  background-color: var(--color-bg-light);
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.productIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+}
+
+.productName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.tdCenter {
+  text-align: center;
+}
+
+.tdRight {
+  text-align: right;
+}
+
+.shareBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.barTrack {
+  width: 4rem;
+  height: 0.375rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.dark .barTrack {
+  background-color: var(--color-surface-dark);
+}
+
+.barFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.shareValue {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  min-width: 2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+}
+
+.badgeInStock {
+  background-color: var(--color-success-muted);
+  color: var(--color-success);
+}
+
+.badgeLow {
+  background-color: var(--color-amber-muted);
+  color: var(--color-amber);
+}

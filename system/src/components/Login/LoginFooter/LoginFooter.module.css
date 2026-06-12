@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    text-align: left;
+  }
+}

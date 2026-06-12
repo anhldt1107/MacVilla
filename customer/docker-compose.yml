@@ -1,0 +1,18 @@
+# Chạy FE trên VPS: docker compose up -d --build
+#
+# URL API được embed lúc build (Vite). Đổi BE → build lại image:
+#   VITE_API_BASE_URL=https://your-api.example.com docker compose build --no-cache
+#
+# Hoặc tạo file .env cạnh compose (không commit) với:
+#   VITE_API_BASE_URL=https://your-api.example.com
+
+services:
+  fe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-}
+    ports:
+      - "${FE_PORT:-8080}:80"
+    restart: unless-stopped

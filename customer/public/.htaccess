@@ -1,0 +1,12 @@
+# SPA fallback (React Router): mọi URL không phải file thật → index.html
+# Hostinger / Apache / LiteSpeed — copy vào dist khi build (thư mục public/)
+# Nếu site chạy trong thư mục con, đổi RewriteBase, ví dụ: RewriteBase /myapp/
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    flex-direction: row;
+  }
+}

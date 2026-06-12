@@ -1,0 +1,205 @@
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+  min-width: 1000px;
+}
+
+.th {
+  padding: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.td {
+  padding: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.tr:hover .td {
+  background-color: var(--color-bg-light);
+}
+
+.thCenter {
+  text-align: center;
+}
+
+.thRight {
+  text-align: right;
+}
+
+.tdCenter {
+  text-align: center;
+}
+
+.tdRight {
+  text-align: right;
+}
+
+.imgWrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--color-bg-light);
+}
+
+.imgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.productSku {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.125rem;
+}
+
+.categoryTag {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius);
+}
+
+.priceList {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.priceSale {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stockCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stockBar {
+  width: 4rem;
+  height: 0.375rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.stockBarFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.stockBarPrimary {
+  background-color: var(--color-primary);
+}
+
+.stockBarOrange {
+  background-color: var(--color-accent-orange);
+}
+
+.stockBarSlate {
+  background-color: var(--color-border);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+}
+
+.statusDot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+}
+
+.statusInStock {
+  background-color: var(--color-success-muted);
+  color: var(--color-success);
+}
+
+.statusInStock .statusDot {
+  background-color: var(--color-success);
+}
+
+.statusLow {
+  background-color: var(--color-accent-orange-muted);
+  color: var(--color-accent-orange);
+}
+
+.statusLow .statusDot {
+  background-color: var(--color-accent-orange);
+}
+
+.statusDisabled {
+  background-color: var(--color-danger-muted);
+  color: var(--color-danger);
+}
+
+.statusDisabled .statusDot {
+  background-color: var(--color-danger);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.actionBtn:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+}
+
+.actionBtn span {
+  font-size: 1.125rem;
+}

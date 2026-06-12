@@ -1,0 +1,145 @@
+.card {
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.donutWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.donut {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--color-bg-light);
+}
+
+.dark .donut {
+  background: var(--color-surface-dark);
+}
+
+.donutSegment {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border-width: 16px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.segmentPrimary {
+  border-color: var(--color-primary);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(-15deg);
+}
+
+.segmentSky {
+  border-color: var(--color-sky);
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(100deg);
+}
+
+.segmentSlate {
+  border-color: var(--color-border);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(208deg);
+}
+
+.dark .segmentSlate {
+  border-color: var(--color-border-dark);
+}
+
+.center {
+  text-align: center;
+}
+
+.centerValue {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.centerLabel {
+  margin: 0;
+  font-size: 0.625rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.legendList {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.legendLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legendDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 2px;
+}
+
+.legendDotPrimary {
+  background-color: var(--color-primary);
+}
+
+.legendDotSky {
+  background-color: var(--color-sky);
+}
+
+.legendDotSlate {
+  background-color: var(--color-border);
+}
+
+.dark .legendDotSlate {
+  background-color: var(--color-border-dark);
+}
+
+.legendName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.legendValue {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}

@@ -1,0 +1,66 @@
+Phần A — Khách (Store, CustomerAuthenticated)
+1. Tài khoản
+
+POST /api/store/auth/register (lần đầu)
+POST /api/store/auth/login → lưu JWT cho các bước sau.
+2. Mua sắm (tuỳ trang)
+
+GET /api/store/categories, GET /api/store/products … (không bắt buộc theo thứ tự cứng).
+3. Giỏ hàng
+
+GET /api/store/me/cart
+POST /api/store/me/cart/items (thêm dòng; có thể PUT/DELETE từng variantId).
+4. Địa chỉ giao
+
+GET /api/store/me/addresses
+POST /api/store/me/addresses (nếu chưa có)
+POST /api/store/me/addresses/{id}/set-default (tuỳ UX; đặt hàng cần shippingAddressId hợp lệ).
+5. Voucher (tuỳ chọn)
+
+POST /api/store/vouchers/validate để kiểm tra mã trước khi đặt.
+6. Xem trước đơn (tuỳ chọn)
+
+POST /api/store/orders/preview — body kiểu StoreOrderCheckoutDto (địa chỉ + voucherCode; paymentMethod có thể bỏ).
+7. Đặt hàng
+
+POST /api/store/orders — bắt buộc shippingAddressId + paymentMethod.
+paymentMethod = "PayOS" (hoặc chuỗi chứa payos): đơn tạo với OrderStatus = AwaitingPayment, PaymentStatus = Unpaid.
+Khác PayOS (vd. COD, chuyển khoản do admin xác nhận sau): OrderStatus = New, PaymentStatus = Unpaid.
+Phần B — Thanh toán PayOS (chỉ khi chọn PayOS)
+8. Tạo link thanh toán
+
+POST /api/store/payments/payos/create — body: orderCode (mã đơn trả về từ bước 7), returnUrl / cancelUrl nếu cần.
+FE mở checkoutUrl cho khách thanh toán.
+9. Sau khi khách trả tiền (không phải FE gọi)
+
+PayOS gọi POST /api/store/payments/payos/webhook (server PayOS → BE).
+BE xác minh chữ ký và cập nhật đơn: PaymentStatus = Paid, OrderStatus = Confirmed.
+FE chỉ cần sau returnUrl: GET /api/store/me/orders/{orderCode} để poll / hiển thị đã thanh toán.
+
+Phần C — Không PayOS (vd. COD)
+Không có bước PayOS. Đơn ở New + Unpaid cho đến khi admin xử lý (mục D).
+Phần D — Theo dõi đơn (khách)
+GET /api/store/me/orders — danh sách.
+GET /api/store/me/orders/{orderCode} — chi tiết (trạng thái đơn / thanh toán).
+Phần E — Vận hành sau khi có đơn (StaffAuthenticated / AdminOnly)
+Dùng khi đơn cần xử lý nội bộ (COD: xác nhận thu tiền; PayOS: thường đã Paid + Confirmed sau webhook).
+
+Thứ tự	API	Khi nào
+1	PUT /api/admin/orders/{id}/payment-status → Paid	COD / chuyển khoản: ghi nhận đã thu. Nếu đơn đang New hoặc AwaitingPayment, code tự đặt OrderStatus = Confirmed. PayOS đã Paid thì bước này thường không cần.
+2	PUT /api/admin/orders/{id}/status → Processing	Bắt đầu xử lý kho/hậu đài.
+3	POST /api/admin/orders/{orderId}/fulfillments	Tạo phiếu xuất kho. AdminOnly.
+4	PUT /api/admin/fulfillments/{id}/assign	Gán worker (tuỳ quy trình). AdminOnly.
+5	PUT /api/admin/fulfillments/{id}/status	Pending → Picking → Packed → Shipped. AdminOnly.
+6	PUT /api/admin/orders/{id}/status	Đồng bộ đơn: ReadyToShip → Shipped → Delivered → Completed (đúng OrderStatuses.CanTransition). Fulfillment không tự sửa trạng thái đơn.
+Tuỳ chọn	POST /api/admin/inventory-transactions (OUT / RESERVE / RELEASE)	Ghi nhật ký kho; không bắt buộc trước/sau tạo phiếu — do quy trình bạn chọn.
+Lưu ý quyền: cập nhật đơn là StaffAuthenticated; fulfillment là AdminOnly — tài khoản chỉ “staff” có thể không tạo được phiếu.
+
+Sơ đồ tóm tắt
+[Khách] Đăng nhập → Giỏ → Địa chỉ → (validate voucher) → (preview) → POST /api/store/orders
+                    │
+                    ├─ PayOS → POST .../payos/create → khách trả tiền → [PayOS] webhook → Paid + Confirmed
+                    │
+                    └─ COD   → New + Unpaid → [Admin] PUT payment-status Paid → Confirmed (nếu đang New/AwaitingPayment)
+[Sau đó] Admin: Processing → tạo fulfillment → assign → cập nhật phiếu → cập nhật trạng thái đơn (→ Completed)
+         (tuỳ chọn) inventory-transactions
+Nếu bạn muốn, có thể thêm file AppData/dev/luong_b2c_api_order.md trong repo với nội dung này để team FE/BE cùng tra.

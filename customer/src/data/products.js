@@ -1,0 +1,56 @@
+/**
+ * Hot sale products (mock data)
+ */
+export const HOT_SALE_PRODUCTS = [
+  {
+    id: 1,
+    name: 'Bếp Từ Bosch PID675DC1E Serie 8 3 Vùng Nấu',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAjTps2hcpaZ25QqEb2dyvGsKU07tT5-axWTgociQKByXjR_DMlQr_radBemqLaHbcU8R5YkPO_Fyp879PBl9HUTAXMsjVKgjzlpplqYHHelyT_aHnCyIg5nSVaAlaKVWCn9R7TEIHFXgJz_nZBZVFQqibbPwUffEFXo1CiYSg_QcnRqHu4JCvnpHADybLIBpdx15kNqEWhTAGnoxfjXSc2cbgmeSNHLVovKm1Gsz7LiBqUjVxRgGW9kQrnUXP26KeubkPqXgLS2I_L',
+    price: 16500000,
+    originalPrice: 22000000,
+    discount: 25,
+    badge: 'Trả góp 0%',
+    alt: 'Bosch induction cooktop black surface',
+  },
+  {
+    id: 2,
+    name: 'Bồn Cầu Thông Minh TOTO Neorest CS989VT/TCF9788WZ',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBG6-fB0-JfNg3Kkq33X4owigbqasQT1euWYcvO_dd69fFxWiCUCr7ezpz36bNP-Gi4Lm5rAIcIBpT8SQ7ml_ufhQrzu6ZYyH38UMC2F--0ivuC3m49b9kN-zBIbF4KMPPBRCtanFNAxksMbQrjjlGWkRooVrEWLruJ_a4pfehq3S0Ba5GXzTwIDMlo8FN8rq3VKcny9UmgyH_kR8DMSBJmyegvsuqecV5tfOrnHK89XAuf_LeRvqTIo86eXOYyBdogp7JYuIQQWaIN',
+    price: 89000000,
+    originalPrice: 105000000,
+    discount: 15,
+    badge: 'Miễn phí lắp đặt',
+    alt: 'White ceramic Toto wall-hung toilet',
+  },
+  {
+    id: 3,
+    name: 'Máy Hút Mùi Hafele HH-WVG90B Chữ T',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6V58CK0IfeyswgqQ5AQS6GttsSAA_DFBYsvusDQU8XEtXPjXDolZN8xcXyzZSoHYc_uqKSkG83t1F1jbPaXvGFCAGfuFztpa_sPcgm6dCKG5rX3PtAuS39HtJQahl1EULFfWXk5lJuiQ5p38uxthJ8hd9Pc8B1cqXEkgKs7ektdyGRVLD6tLYCazZ5r1M_peItWgWgZYqP3ukPIblQqP37FKGwZCBYLqtEUSQE09Edo5jKFFRGBPxiQyojXhH92846k_Me8mOvNe6',
+    price: 5990000,
+    originalPrice: 9900000,
+    discount: 40,
+    badge: 'Giao nhanh 2h',
+    alt: 'Stainless steel Hafele cooker hood',
+  },
+  {
+    id: 4,
+    name: 'Bình Nóng Lạnh Ariston Andris2 RS 30L',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD2UE9BDXZ7CAZSmb7LuR7nwP1LwNfHxiVXYOY49dLDkQFmFmbL_VbpQE8PCMssM9VmtmcnV1h5Ymw-FGtA0IeHBKpitW7JK978RFTKMGq_p2O8qFHdO256ahn6tBshZT1ZrPOP3JfPsC5uUeiBS5Mq94MuVWUsdjp9JdLkHd1uI6UCMuzyKXGTcZdYgcciokx_InqoP6RHYnkJ2goeZyNjczQt3QHBVpj_I9N9XyZMlDlonXffIQhMLGJepywqNn0O6HgLR1zIX-LY',
+    price: 3450000,
+    originalPrice: 3850000,
+    discount: 10,
+    badge: 'Tặng Voucher 200k',
+    alt: 'Ariston electric water heater blue design',
+  },
+  {
+    id: 5,
+    name: 'Vòi Sen Tắm Inax LFV-1112S Cao Cấp',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBkSApcq35YTaMiBKVxjReyRinGgKzcRy_mY1RWZmFV-eswwQ_acFxN_l86cSydxrNvW0YBkR42ECQ_pUmDtg2dKtXHIkZfN2RgdQvxfYOgMbP5s_P7ysuImVu1FT-_tpPpPvta8sUygmt7QAbLq1vzZagEjdCp4gCQUKv8ZE3iN8sxywSvcere-VubTWjo_rKUC27koLApqxhayq3soyNwSLkMoc3PUNdNlm5YcgxDiUpY0KuRyZ0Ury1c55HUD0A7hUgCKxwIJTAN',
+    price: 1250000,
+    originalPrice: 1560000,
+    discount: 20,
+    badge: 'Bảo hành 5 năm',
+    alt: 'Chrome Inax bathroom faucet',
+    hideOnMobile: true,
+  },
+]

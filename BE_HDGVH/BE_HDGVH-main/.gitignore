@@ -1,0 +1,47 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# Docker secrets (compose đọc .env)
+.env
+
+# ASP.NET / local config
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# Logs
+*.log
+logs/
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local app data / generated test data
+AppData/
+
+# EF / tooling caches
+Generated/
+TestResults/
+
+# Keep internal docs
+!dev/
+!dev/*.md

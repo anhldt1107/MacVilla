@@ -1,0 +1,10 @@
+/** Barrel duy nhất cho checkout — import trực tiếp từ file component, không qua index lồng nhau. */
+export { ShippingInfo } from './ShippingInfo/ShippingInfo.jsx'
+export { PaymentMethods } from './PaymentMethods/PaymentMethods.jsx'
+export { CheckoutOrderSummary } from './CheckoutOrderSummary/CheckoutOrderSummary.jsx'
+export { CheckoutTrustSignals } from './CheckoutTrustSignals/CheckoutTrustSignals.jsx'
+export { OrderSuccessProgress } from './OrderSuccessProgress/OrderSuccessProgress.jsx'
+export { OrderSuccessSummary } from './OrderSuccessSummary/OrderSuccessSummary.jsx'
+export { OrderSuccessActions } from './OrderSuccessActions/OrderSuccessActions.jsx'
+export { OrderSuccessYouMayLike } from './OrderSuccessYouMayLike/OrderSuccessYouMayLike.jsx'
+export { OrderSuccessSupport } from './OrderSuccessSupport/OrderSuccessSupport.jsx'

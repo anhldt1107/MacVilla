@@ -1,0 +1,125 @@
+.card {
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.rowLabel {
+  color: var(--color-text-muted);
+}
+
+.rowValue {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.rowDiscount {
+  color: var(--color-success);
+}
+
+.totalRow {
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.totalValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.debtBox {
+  padding: 1rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.debtRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.debtRowLast {
+  margin-bottom: 1rem;
+}
+
+.debtLabel {
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.debtPaid {
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.debtRemain {
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+.progressTrack {
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--color-success);
+  border-radius: var(--radius-full);
+}
+
+.progressLabel {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 0.5rem;
+}

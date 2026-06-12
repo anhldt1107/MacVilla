@@ -1,0 +1,71 @@
+.rpb-aside {
+  @apply hidden lg:flex lg:w-1/2 relative flex-col justify-between p-12 overflow-hidden bg-primary;
+}
+
+.rpb-aside-bg {
+  @apply absolute inset-0 z-0;
+}
+
+.rpb-aside-bg-overlay {
+  @apply absolute inset-0 bg-primary/80 z-10;
+}
+
+.rpb-aside-bg-image {
+  @apply w-full h-full bg-cover bg-center;
+}
+
+.rpb-aside-content {
+  @apply relative z-20;
+}
+
+.rpb-aside-brand {
+  @apply flex items-center gap-3 mb-12;
+}
+
+.rpb-aside-brand-icon {
+  @apply size-10 bg-white rounded-lg flex items-center justify-center text-primary;
+}
+
+.rpb-aside-brand-title {
+  @apply text-white text-2xl font-bold tracking-tight;
+}
+
+.rpb-aside-headline {
+  @apply max-w-md;
+}
+
+.rpb-aside-h1 {
+  @apply text-white text-4xl font-black leading-tight mb-6;
+}
+
+.rpb-aside-lead {
+  @apply text-white/80 text-lg mb-10;
+}
+
+.rpb-aside-benefits {
+  @apply relative z-20 grid gap-6;
+}
+
+.rpb-aside-benefit-card {
+  @apply flex items-start gap-4 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10;
+}
+
+.rpb-aside-benefit-icon-wrap {
+  @apply bg-white/20 p-2 rounded-lg text-white;
+}
+
+.rpb-aside-benefit-title {
+  @apply text-white font-bold;
+}
+
+.rpb-aside-benefit-desc {
+  @apply text-white/70 text-sm;
+}
+
+.rpb-aside-footer {
+  @apply relative z-20 pt-8 border-t border-white/20;
+}
+
+.rpb-aside-footer-copy {
+  @apply text-white/60 text-sm;
+}

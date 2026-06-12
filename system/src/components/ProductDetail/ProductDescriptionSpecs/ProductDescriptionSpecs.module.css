@@ -1,0 +1,151 @@
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionTitle .icon {
+  color: var(--color-primary);
+}
+
+.viewAll {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+.body {
+  padding: 1.5rem;
+}
+
+.description {
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-text-muted);
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 3rem;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  gap: 1rem;
+}
+
+.specLabel {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.specValue {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.pdfTitle {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.pdfGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.pdfCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.pdfCard:hover {
+  border-color: var(--color-primary);
+}
+
+.pdfCard:hover .pdfName,
+.pdfCard:hover .pdfIcon {
+  color: var(--color-primary);
+}
+
+.pdfIconWrap {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-danger-muted);
+  color: var(--color-danger);
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.pdfBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.pdfName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pdfMeta {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.125rem;
+}
+
+.pdfIcon {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}

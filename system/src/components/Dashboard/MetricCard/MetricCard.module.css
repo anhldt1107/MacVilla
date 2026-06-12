@@ -1,0 +1,90 @@
+.card {
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.iconWrapPrimary {
+  background-color: var(--color-primary-muted);
+  color: var(--color-primary);
+}
+
+.iconWrapOrange {
+  background-color: var(--color-accent-orange-muted);
+  color: var(--color-accent-orange);
+}
+
+.iconWrapBlue {
+  background-color: var(--color-info-muted);
+  color: var(--color-info);
+}
+
+.iconWrapRed {
+  background-color: var(--color-danger-muted);
+  color: var(--color-danger);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badgePositive {
+  color: var(--color-success);
+}
+
+.badgeNegative {
+  color: var(--color-text-muted);
+}
+
+.badgeDanger {
+  color: var(--color-danger);
+}
+
+.badgeNeutral {
+  color: var(--color-text-muted);
+}
+
+.label {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.value {
+  margin: 0.25rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.valueSuffix {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.valueDanger {
+  color: var(--color-danger);
+}

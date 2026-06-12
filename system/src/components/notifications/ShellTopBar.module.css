@@ -1,0 +1,51 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+:global(.dark) .bar {
+  border-bottom-color: rgba(148, 163, 184, 0.15);
+  background: rgba(15, 23, 42, 0.75);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userName {
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+:global(.dark) .userName {
+  color: #cbd5e1;
+}
+
+@media (min-width: 640px) {
+  .bar {
+    padding: 0 1.5rem;
+  }
+
+  .userName {
+    max-width: 14rem;
+  }
+}

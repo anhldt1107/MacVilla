@@ -1,0 +1,1 @@
+export { SmartHomeSection } from './SmartHomeSection'

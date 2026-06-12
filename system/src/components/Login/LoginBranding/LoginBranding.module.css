@@ -1,0 +1,64 @@
+.branding {
+  position: relative;
+  display: none;
+  flex: 1 1 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .branding {
+    display: flex;
+  }
+}
+
+.bgDecor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrBNhUUP3167dXTWwCTA7Z6mrXlMResQlvj9uN7_EuNEdMn3T5uhWnVYrTwkoMEgtxp-NNLuZfzF0mSoHPsAzA8mNNMKs6bIIZFQcmC318yjzFbgnRxahURvNtLiUve2gk6deTgKNoSUXcfFRs4Fqx6Xf0R0XiJ7grSjWygkwMitPkeuLwk6w_6NanhYVKcJeVO7yKlm9uM1uDEVSLyw7DLNazLKA9DELkkYtMSHKNoCdvJRadBuQiKFngRzgkoPbDpUcc9Bl4-085");
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--color-text-inverse);
+  max-width: 24rem;
+}
+
+.logoImg {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  height: auto;
+  max-height: 5rem;
+  margin: 0 auto 1.5rem;
+  object-fit: contain;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-text-inverse-muted);
+}

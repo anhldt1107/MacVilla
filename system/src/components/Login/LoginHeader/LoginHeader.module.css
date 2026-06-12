@@ -1,0 +1,54 @@
+.header {
+  margin-bottom: 1.75rem;
+}
+
+.mobileBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .mobileBrand {
+    display: none;
+  }
+}
+
+.mobileLogoImg {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.75rem;
+  object-fit: contain;
+}
+
+.mobileTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.intro {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .intro {
+    text-align: left;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+}
+
+.description {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
